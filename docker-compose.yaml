@@ -1,0 +1,85 @@
+version: '3.9'
+services:
+
+  cluster-1:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-1
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.1
+
+
+  cluster-2:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-2
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.2
+
+
+  cluster-3:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-3
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.3
+
+
+  cluster-4:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-4
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.4
+
+
+  cluster-5:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-5
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.5
+
+
+  cluster-6:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-6
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.6
+
+
+  cluster-7:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-7
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.7
+
+
+  cluster-8:
+    image: harbor.x-contion.top:500/x-contion/base_ubuntu:zh
+    container_name: cluster-8
+    entrypoint: ["/sbin/sshd", "-D"]
+    networks:
+      cluster_net:
+        ipv4_address: 90.90.1.8
+
+
+networks:
+  cluster_net:
+    driver: "bridge"
+    ipam:
+      # driver: default
+      config:
+        - subnet: "90.90.1.0/24"
+          ip_range: "90.90.1.0/24"
+          gateway: "90.90.1.254"
+        
